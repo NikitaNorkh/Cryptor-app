@@ -1,0 +1,39 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Logs
+logs/
+*.log
+
+# Database files
+db/
+
+# Build and distribution folders
+build/
+dist/
+
+# Virtual environments
+venv/
+env/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Python-specific
+*.egg-info/
+*.egg
+
+# VSCode or other IDE settings
+.vscode/
+.idea/
+*.swp
+
+# Node modules (если вдруг появятся фронтенд штуки)
+node_modules/
+
+# Misc
+*.bak
+*.tmp
