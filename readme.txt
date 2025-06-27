@@ -1,16 +1,88 @@
-Я действительно постарался над этим приложением-сайтом. И хоть дизайн может выглядеть не самым лучшим, к сожлаению у меня нет большого опыта в этом направлении :(
+# 🔐 Secure Encryption Tool & Password Generator
 
-Что касается технической же части:
-* Весь бэкенд проекта реализован в файле main.py, с помощью модуля eel
-* Модуль eel для python подошел мне идеально, ввиду простоты, скорости реализации и скорости работы на нем эффективного бэкенда для верстки
-* Для базы данных пользователей я использовал sqlite3, ввиду простоты и скорости работы по сравнению с дргуими решениями, а также эта библиотека является встроенной в python, что тоже упрощает работу. Для использования этой базы данных в главном файле (main.py) написаны SQL запросы.
-* Логирование программы работает за счет модуля logging и записывает логи в папку logs, кроме моих записей внутри программы, туда так же попадает информация сайта при его обновлении.
-* Была реализована функция регистрации, авторизации, сохранения сессии при перемещении по разным инсрументам и так же завершение сессии. Кнопки отвечающие за это появляются в верхнем меню при переходе на главную стораницу.
-* Так же, кроме 5 видов шифрования я реализовал свой duck метод.
-* В критериях есть пункт про модальные окна, и я надеюсь что модальные окна регистариции, входа появляющиеся при нажатии на соответсвующие кнопки входят в эту категорию.
-* Было интересно реализовать анимации перехода между страницами, в этом помог jquery.
-* Так же, проект полностью совместим со всеми oc на которых установлен и работает python ( при запуске его через main.py). А так как python обычно предустановлен в linux и macOS - то я надеюсь что это считается совместимостью, так как создать исполнительный файл я физически могу только для windows. Есть скомпилированный exe файл внутри папки dist, папка build тоже относится к exe файлу.
+This project is a **multi-functional website application** built with Python `eel` for the backend and plain HTML/CSS/JS for the frontend.
 
-Спасибо, ItSTEP, за организацию такого интересного мероприятия.
+I did my best to deliver solid functionality, even though my UI design skills are still developing — so don't judge the visuals too hard 😅
 
-Повторю на всякий случай: я добавил EXE файл внутрь папки dist.
+---
+
+## 📸 Screenshots
+
+### Main Page
+
+![Main Page Screenshot](src/assets/main.png)
+
+### Password Generator in Action
+
+![Password Generator Demo](src/assets/password.gif)
+
+### Text Encryption Example
+
+![Text Encryption Demo](src/assets/enc1.gif)
+
+---
+
+## ⚙️ Features
+
+✅ Password generator with character set selection (lowercase, uppercase, numbers, symbols)  
+✅ Multiple encryption algorithms supported: `md5`, `crc32`, `sha1`, `sha256`, `sha512`  
+✅ My own custom method — **DUCK encryption** that rearranges letters and adds "duck" in between for fun 🦆  
+
+![Duck Encryption Fun](src/assets/enc2.gif)
+
+✅ User registration and login system  
+✅ Session management across pages  
+✅ Modal windows for registration and login  
+✅ Smooth page transitions with jQuery  
+✅ Logs created automatically for tracking activity  
+✅ SQLite3 database for user storage  
+✅ Fully compatible with all OS where Python runs (Windows, Linux, macOS)  
+
+---
+
+## 🚀 Usage
+
+### Requirements:
+
+- Python 3.9+  
+- `eel` library  
+- No extra dependencies needed for DB (uses built-in `sqlite3`)  
+
+### Run project:
+
+```bash
+cd src
+python main.py
+
+
+
+The web interface will open and provide access to password generation, encryption tools, and user management.
+
+For Windows users, a precompiled .exe file is available inside the dist folder.
+
+🗂️ Project Structure
+python
+Copy
+Edit
+src/
+├── assets/               # GIFs, screenshots for README
+├── css/                  # Stylesheets
+├── js/                   # JavaScript files
+├── logs/                 # Auto-created logs
+├── database/             # SQLite database files
+├── main.py               # Backend with eel
+├── main.html             # Main page
+├── encrypt.html          # Encryption page
+├── pass.html             # Password generator page
+dist/                     # Windows executable build
+build/                    # Build files for exe
+.gitignore
+README.md
+🎉 Special Thanks
+Thanks to ItSTEP for organizing the coding competition where this project originally started!
+
+PS: This project was designed with educational purposes in mind and showcases basic encryption principles combined with fun custom features like "Duck Encryption".
+
+yaml
+Copy
+Edit
