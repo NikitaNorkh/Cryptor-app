@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Password Generator</title>
+    <script type="text/javascript" src="/eel.js"></script>
+    <script type="text/javascript" src="jquery/jquery.js"></script>
+
+    <link rel="stylesheet" href="css/pass.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="links">    
+        <a href="main.html">Home</a>
+        <a href="encrypt.html">Text Encryption</a>
+    </div>
+
+    <div class="container">
+        <h1 class="th1">
+            <img src="icons/pass.png" width="45px" height="45px"> Secure Password Generator
+        </h1>
+
+        <!-- Password Information -->
+        <p class="info">
+            <b>Creating a strong password</b> is important for several reasons:<br><br>
+
+            <b>Protection against hacking:</b> A strong password makes it harder for attackers to break into your account. The more complex the password, the more combinations they have to try, making brute-force attacks longer and more expensive.<br>
+
+            <b>Protecting confidential data:</b> A strong password helps keep your private information safe from unauthorized access.<br>
+
+            <b>Prevention of interception:</b> Complex passwords are harder to intercept or guess using common methods like eavesdropping, email interception, or phishing.<br>
+
+            <b>Compliance with security policies:</b> Many platforms and systems require strong passwords to meet their security standards.<br>
+
+            <b>Protection against dictionary attacks:</b> Strong passwords should not be simple dictionary words or predictable character combinations, which helps prevent dictionary-based guessing attacks.<br>
+
+            <b>Overall security:</b> Strong passwords are a key part of an overall security strategy, which also includes antivirus protection, network security, and software updates.<br><br><br>
+
+            <span style="color: yellow;">
+                Therefore, to generate a strong password, select the desired character set for the generator (check the boxes for the elements you want in your password. You can also generate a PIN code by selecting only the numbers option).<br>
+                Then, choose the password length and click "Generate." You can press the button multiple times to get a result that suits you.
+            </span>
+        </p>
+
+        <!-- Password Generation Form -->
+        <form id="form" name="passGeneration">
+            <div class="form-group inText">
+                <input type="textarea" id="Ipass" name="Ipass" class="form-control" placeholder="Your generated password will appear here...">
+            </div>
+
+            <div class="passSigns">
+                <div class="length">
+                    <div class="lengthArea">
+                        <p id="lengthAreaP">8</p>
+                    </div>
+                    <label for="length" class="form-label">Password length</label>
+                    <input type="range" id="length" name="length" class="form-range" min="1" max="20" value="8" step="1" onInput="onInput()">
+                </div>
+
+                <div class="form-check form-check-inline checker">
+                    <input type="checkbox" id="lowerCase" name="passSign" value="lowerCase" class="form-check-input">
+                    <label for="lowerCase" class="form-check-label"> Lowercase letters </label><br>
+                </div>
+
+                <div class="form-check form-check-inline checker">
+                    <input type="checkbox" id="upperCase" name="passSign" value="upperCase" class="form-check-input">
+                    <label for="upperCase" class="form-check-label"> Uppercase letters </label><br>
+                </div>
+
+                <div class="form-check form-check-inline checker">
+                    <input type="checkbox" id="numbers" name="passSign" value="numbers" class="form-check-input">
+                    <label for="numbers" class="form-check-label"> Numbers </label>
+                </div>
+
+                <div class="form-check form-check-inline checker">
+                    <input type="checkbox" id="symbols" name="passSign" value="symbols" class="form-check-input">
+                    <label for="symbols" class="form-check-label"> Special characters </label>
+                </div>
+            </div>    
+
+            <input type="submit" value="Generate" id="submit" class="btn btn-primary mb-2">
+        </form>
+    </div>
+
+    <div style="min-height: 100px"></div>
+
+    <script type="text/javascript">
+        function onInput() {
+            // Update the password length display
+            let length = document.forms["passGeneration"].length.value;
+            document.getElementById("lengthAreaP").innerHTML = length;
+        }
+    </script>
+
+    <!-- Password generation logic, sending data to Python, and displaying the result -->
+    <script type="module">
+        async function passwordGeneration() {
+            // Get form values
+            let length = document.forms["passGeneration"].length.value;
+            let lowerCase = document.forms["passGeneration"].lowerCase.checked;
+            let upperCase = document.forms["passGeneration"].upperCase.checked;
+            let numbers = document.forms["passGeneration"].numbers.checked;
+            let symbols = document.forms["passGeneration"].symbols.checked;
+
+            // Call the Python function
+            eel.passGeneration(length, lowerCase, upperCase, numbers, symbols)(values);
+        }
+
+        function values(value) {
+            // Display the generated password
+            $('#Ipass').val(value);
+        }
+
+        $("#form").submit(function() {
+            // Connect form to Python
+            passwordGeneration();
+            return false; // Prevent page reload
+        });
+    </script>
+
+    <script type="text/javascript">
+        // Page transition animations
+        $(document).ready(function() {
+            $('a').on('click', function(event) {
+                event.preventDefault();
+                var nextPage = $(this).attr('href');
+
+                $('body').fadeOut(500, function() {
+                    window.location.href = nextPage;
+                });
+            });
+        });
+    </script>
+
+    <!-- Including bootstrap -->
+    <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>

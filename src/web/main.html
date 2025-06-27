@@ -1,0 +1,231 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Data Encryption</title>
+    
+    <script type="text/javascript" src="/eel.js"></script>
+    <script type="text/javascript" src="jquery/jquery.js"></script>
+
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+
+    <!-- Importing fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet"> 
+</head>
+<body>
+<div class="linksHead">    
+    <a href="encrypt.html">Text Encryption</a>
+    <a href="pass.html">Password Generator</a>
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#signUpForm" id="b1">Sign Up</button>
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#signInForm" id="b2">Sign In</button>
+    <button type="button" class="hide" id="b3" onclick="signOut()">Sign Out</button>
+</div>
+
+<!-- Registration Form -->
+<div class="modal fade" id="signUpForm" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Registration Form</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form id="signUp" name="signUp">
+          <div class="form-group">
+            <label for="login">Your username</label>
+            <input type="text" class="form-control" id="login" placeholder="Enter username">
+            <small id="emailHelp" class="form-text text-muted">Your data is protected!</small>
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" id="password" placeholder="Password">
+          </div>
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Sign Up</button>
+      </div>
+        </form>
+    </div>
+  </div>
+</div>
+
+<!-- Sign In Form -->
+<div class="modal fade" id="signInForm" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Sign In</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form id="signIn" name="signIn">
+          <div class="form-group">
+            <label for="login">Your username</label>
+            <input type="text" class="form-control" id="InLogin" placeholder="Enter username">
+            <small id="emailHelp" class="form-text text-muted">Your data is protected!</small>
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" id="InPassword" placeholder="Password">
+          </div>
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Sign In</button>
+      </div>
+        </form>
+    </div>
+  </div>
+</div>
+
+<div class="header">
+    <div class="f1">
+        <h1 data-tooltip="This section provides basic information and useful encryption tools available in the top menu"> Everything you need to know about data encryption principles </h1>
+    </div>
+    <div>    
+        <p> Encryption is essentially the process of hiding information so that no one except the intended recipient can read it. </p>
+    </div>
+    <img src="pic1.jpg" data-tooltip="This shows how simple the principle of data encryption really is" class="picture">
+    <div id="tooltip"></div>
+
+    <p class="info">
+        <span style="color: yellow;">Key tips for encryption in everyday life:</span><br><br>
+
+        1 - Use long and complex passwords: Create unique passwords with a mix of characters.<br>
+
+        2 - Use reliable encryption algorithms: Choose modern, proven encryption methods.<br>
+
+        3 - Encrypt data both in transit and at rest: Protect your data during transmission and while stored.<br>
+
+        4 - Enable multi-factor authentication: Additional authentication methods add extra security layers.<br>
+
+        5 - Keep your software updated: Updates help fix vulnerabilities and protect against new threats.<br>
+    </p>
+</div>
+
+<div class="footer"></div>
+
+<!-- Tooltip on image -->
+<script type="text/javascript">
+    $(function(){
+        $("[data-tooltip]").mousemove(function (eventObject) {
+            $data_tooltip = $(this).attr("data-tooltip");
+            $("#tooltip").html($data_tooltip)
+                .css({ 
+                    "top" : eventObject.pageY + 5,
+                    "left" : eventObject.pageX + 5
+                })
+                .show();
+        }).mouseout(function () {
+            $("#tooltip").hide()
+                .html("")
+                .css({
+                    "top" : 0,
+                    "left" : 0
+                });
+        });
+    });
+</script>
+
+<!-- Registration Script -->
+<script type="text/javascript">
+    function signUp(){
+        let login = document.getElementById("login").value;
+        let password = document.getElementById("password").value;
+        eel.signUp(login, password)(values);
+    }
+
+    function values(value){
+        if (!value){
+            alert("An error occurred, registration failed.")
+        }
+    }
+
+    function signIn(){
+        let login = document.getElementById("InLogin").value;
+        let password = document.getElementById("InPassword").value;
+        eel.signIn(login, password)(InValues);
+    }
+
+    function activeSession(){
+        const b1 = document.getElementById("b1");
+        const parent = b1.parentNode;
+
+        const b2 = document.getElementById("b2");
+        const parent2 = b2.parentNode;
+
+        parent.removeChild(b1);
+        parent2.removeChild(b2);
+
+        var outBut = document.getElementById("b3");
+        outBut.classList.add("show", "btn", "btn-primary");
+        outBut.classList.remove("hide");    
+    }
+
+    function endedSession(){
+        location.reload();
+    }
+
+    function signOut(){
+        eel.signOut()(alertSignOut);
+        endedSession();
+    }
+
+    function alertSignOut(login){
+        alert("You have signed out: " + login);
+    }
+
+    function InValues(value){
+        if (!value){
+            alert("Sign in failed.");
+        } else {
+            activeSession();
+            alert("You signed in as: " + document.getElementById("InLogin").value);
+        }
+    }
+
+    $("#signUp").submit(function(){
+        signUp();
+        return false;
+    });
+
+    $("#signIn").submit(function(){
+        signIn();
+        return false;
+    });
+</script>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('a').on('click', function(event) {
+            event.preventDefault();
+            var nextPage = $(this).attr('href');
+            $('body').fadeOut(500, function() {
+                window.location.href = nextPage;
+            });
+        });
+    });
+</script>
+
+<!-- Session Check Script -->
+<script type="text/javascript">
+    function checkSession(){
+        eel.checkSession()(chSes);
+    };
+
+    function chSes(value){
+        if(value){
+            activeSession();
+        }
+    };
+
+    if(document.readyState === 'loading'){
+        checkSession();
+    };
+</script>
+
+<!-- Including bootstrap -->
+<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>

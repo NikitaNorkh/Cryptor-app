@@ -1,0 +1,169 @@
+body{
+background: #2193b0;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #6dd5ed, #2193b0);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #6dd5ed, #2193b0);  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.links{
+	display: block;
+	position: sticky;
+	top: 0;
+
+	min-height: 50px;
+
+	text-align: center;
+
+	background: #213555;
+	padding: 0.5%;
+
+	border-bottom-left-radius: 40px;
+	border-bottom-right-radius: 10px;
+}
+.links a{
+	display: inline-block;
+	width: 20%;
+	margin: auto;
+
+	background: #4F709C;
+
+	padding: 1%;
+
+	text-decoration: none;
+
+	font-family: "Ubuntu", sans-serif;
+	font-weight: 700;
+	font-style: normal;
+
+	color: white;
+
+	border-radius: 5px;
+
+}
+.links a:hover{
+	color: #99111C;
+}
+.container{
+	display: block;
+	width: 80%;
+	margin: auto;
+
+	text-align: center;
+}
+.th1{
+	text-align: center;
+	color: white;
+	-webkit-text-stroke: 1px black;
+	font-size: 45px;
+
+
+	font-family: "Ubuntu", sans-serif;
+	font-weight: 700;
+	font-style: normal;
+
+	padding: 2%;
+
+	background: #99111C;
+	border-radius: 10px;
+
+	width: 80%;
+	margin: auto;
+	margin-top: 10%;
+	margin-bottom: 5%; 
+}
+form{
+	width: 80%;
+	margin: auto;
+	padding: 1%;
+
+	background: #213555;
+	border-radius: 20px;
+}
+label{
+	color: white;
+}
+#lengthAreaP{
+	color: white;
+
+	background: #99111C;
+
+	float: left;
+	width: 70%;
+	padding: 1%;
+
+	border-radius: 10px;
+
+	margin-top: 20%;
+}
+.length{
+	display: block;
+
+
+	margin-top: 5%;
+
+	vertical-align: middle;
+}
+.length div{
+	display: inline-block;
+	width: 10%;
+}
+.lengthArea{
+
+	vertical-align: middle;
+	margin: 0;
+}
+.passSigns input{
+	border: 1px solid red;
+}
+.length input{
+	display: inline-block;
+
+	width: 70%;
+
+	margin-top: 1%;
+	border: none;
+}
+.length label{
+	font-family: "Ubuntu", sans-serif;
+	font-weight: 700;
+	font-style: normal;
+
+}
+.passSigns{
+	display: block;
+	text-align: center;
+	vertical-align: middle;
+
+}
+.checker{
+	display: inline-block;
+
+	margin: 0;
+	text-align: center;
+	font-family: "Ubuntu", sans-serif;
+	font-weight: 700;
+	font-style: normal;
+
+
+	vertical-align: middle;
+}
+#submit{
+	margin-top: 20px;
+}
+.info{
+	padding: 3%;
+	display: block;
+	width: 80%;
+	margin: auto;
+
+	font-family: "Ubuntu", sans-serif;
+	font-weight: 700;
+	font-style: normal;
+	font-size: 20px;
+	/*-webkit-text-stroke: 1px black;*/
+
+	color: white;
+
+	background: #213555;
+	border-radius: 50px;
+	margin-bottom: 5%;
+}

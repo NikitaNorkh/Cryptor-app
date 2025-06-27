@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Text Encryption Tool</title>
+
+    <script type="text/javascript" src="/eel.js"></script>
+    <script type="text/javascript" src="jquery/jquery.js"></script>
+    <script type="text/javascript" src="js/functions.js"></script>
+
+    <link rel="stylesheet" href="css/encrypt.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+</head>
+<body>
+<div class="links">    
+    <a href="main.html">Home</a>
+    <a href="pass.html">Password Generator</a>
+</div>
+<div class="container">
+    <h1 class="th1"> <img src="icons/encrypt.png" width="45px" height="45px"> Online Text Encryption</h1>
+    <p class="info">
+        <b>Encryption</b> is the process of transforming information using special algorithms to make it unreadable to unauthorized persons. It is used in various fields, including:<br><br>
+
+        1. <b>Computer Security:</b> Encryption protects sensitive data like passwords, banking details, etc., from unauthorized access.<br>
+
+        2. <b>Communications:</b> Encryption ensures privacy on the Internet by protecting data transmitted via emails, messengers, and other communication channels.<br>
+
+        3. <b>Financial Transactions:</b> It secures online payments and banking operations, keeping financial information safe.<br>
+
+        4. <b>Military Communications:</b> In defense, encryption plays a crucial role in securing secret information and communications.<br><br>
+
+        <b>There are two main types of encryption:</b><br><br>
+
+        1. <b>Symmetric Encryption:</b> One key is used for both encryption and decryption. Examples include DES (Data Encryption Standard) and AES (Advanced Encryption Standard).<br>
+
+        2. <b>Asymmetric Encryption:</b> Two keys are used: a public key for encryption and a private key for decryption. Examples include RSA and ECC (Elliptic Curve Cryptography).<br>
+
+        Typically, encryption involves converting plaintext into an unreadable form using a key or password. Only with the correct key can the information be decrypted, ensuring confidentiality and integrity of the transmitted data.<br><br><br>
+
+        <span style="color: yellow;">
+            To encrypt text, paste or type your text in the field below and select the desired encryption method (check the box next to the method).<br>
+            After clicking "Encrypt," the encrypted text will appear in the field below, under "Result."
+        </span><br><br>
+
+        <span style="color: red;">
+            <b> Duck - my custom simple encryption method, which rearranges letters and adds the word "duck" after every second letter. </b>
+        </span>
+    </p>
+
+    <form id="form" name="encValues">
+        <div class="form-group inText">
+            <label for="IText">Enter your text: </label>
+            <input type="textarea" id="IText" name="IText" class="form-control" placeholder="Today I felt like hacking the Pentagon.....">
+        </div>
+        <div class="encMethods">
+            <div class="form-check form-check-inline">
+                <input type="checkbox" id="enc1" name="encType" value="md5" class="form-check-input">
+                <label for="enc1"> md5 </label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input type="checkbox" id="enc2" name="encType" value="crc32" class="form-check-input">
+                <label for="enc2"> crc32 </label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input type="checkbox" id="enc3" name="encType" value="sha1" class="form-check-input">
+                <label for="enc3"> sha1 </label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input type="checkbox" id="enc4" name="encType" value="sha256" class="form-check-input">
+                <label for="enc4"> sha256 </label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input type="checkbox" id="enc5" name="encType" value="sha512" class="form-check-input">
+                <label for="enc5"> sha512 </label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input type="checkbox" id="enc6" name="encType" value="duck" class="form-check-input">
+                <label for="enc6"> duck </label>
+            </div>    
+        </div>
+
+        <input type="submit" value="Encrypt" id="submit" class="btn btn-primary mb-2">
+    </form>
+
+    <h2 id="outLab">Result:</h2>
+    <div class="outD">    
+        <h1 id="output"> Nothing here yet.....</h1>
+    </div>
+</div>
+
+<div class="footer" style="display: block; min-height: 100px;"></div>
+
+<!-- Sending data to Python for encryption -->
+<script type="module">
+    async function encrypt() {
+        let gotText = document.forms["encValues"].IText.value;
+
+        let md = document.forms["encValues"].enc1.checked;
+        let crc = document.forms["encValues"].enc2.checked;
+        let sha = document.forms["encValues"].enc3.checked;
+        let sha2 = document.forms["encValues"].enc4.checked;
+        let sha5 = document.forms["encValues"].enc5.checked;
+        let duck = document.forms["encValues"].enc6.checked;
+
+        eel.funcText(gotText, md, crc, sha, sha2, sha5, duck)(values);
+    }
+
+    function values(value) {
+        document.getElementById("output").innerHTML = value;
+    }
+
+    $("#form").submit(function() {
+        encrypt();
+        return false;
+    });
+</script>
+
+<script type="text/javascript">
+    $('input[type="checkbox"]').click(function() {  
+        var checkboxGroup = 'input[name="' + $(this).attr('name') + '"]';  
+        $(checkboxGroup).not(this).prop('checked', false);  
+    });
+</script>
+
+<script type="text/javascript">
+    $(window).on('load pageshow', function () {
+        $('body').fadeIn();
+    });    
+
+    $("a:not([href*=javascript]):not([href*=\\#]):not(.fancybox):not([target]):not([data-fancybox])").click(function() {
+        $('body').fadeOut();
+        let url = $(this).attr('href');
+        window.setTimeout(function() {
+            window.location.href = url;
+        }, 500);    
+        return false;
+    });
+</script>
+
+<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>
