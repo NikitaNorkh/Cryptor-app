@@ -28,7 +28,7 @@ I did my best to deliver solid functionality, even though my UI design skills ar
 ✅ Multiple encryption algorithms supported: `md5`, `crc32`, `sha1`, `sha256`, `sha512`  
 ✅ My own custom method — **DUCK encryption** that rearranges letters and adds "duck" in between for fun 🦆  
 
-![Duck Encryption Fun](src/assets/enc2.gif)
+<img src="src/assets/enc2.gif" alt="Duck Encryption" width="300px">
 
 ✅ User registration and login system  
 ✅ Session management across pages  
