@@ -73,7 +73,7 @@ The web interface will open and provide access to password generation, encryptio
 For Windows users, a precompiled .exe file is available inside the dist folder.
 
 ## 🗂️ Project Structure
-
+```
 📦 Project Root
 ├── logs/ # Automatically created logs folder
 ├── db/ # SQLite database files
@@ -93,9 +93,7 @@ For Windows users, a precompiled .exe file is available inside the dist folder.
 ├── .gitignore
 ├── README.md
 
-yaml
-Copy
-Edit
+```
 
 💡 **Notes:**  
 - `logs` and `db` folders are auto-created at runtime if missing  
