@@ -3,8 +3,9 @@
 This project is a **multi-functional website application** built with Python `eel` for the backend and plain HTML/CSS/JS for the frontend.
 
 It was developed for a huge programming competition in 2024 in my city, where it successfully secured me a place in the finals. ( I was 16 years old at the moment )
-
-<img src="src/assets/sert.jpg" alt="Certificate" width="500px" align="center">
+<p align="center">
+  <img src="src/assets/sert.jpg" alt="Certificate" width="550px" align="center">
+</p>
 
 ---
 
@@ -12,15 +13,22 @@ It was developed for a huge programming competition in 2024 in my city, where it
 
 ### Main Page
 
-![Main Page Screenshot](src/assets/main.png)
+<p align="center">
+  <img src="src/assets/main.png" alt="Main Page Screenshot" width="600px">
+</p>
 
 ### Password Generator in Action
 
-![Password Generator Demo](src/assets/password.gif)
+<p align="center">
+  <img src="src/assets/password.gif" alt="Password Generator Demo" width="400px">
+</p>
 
 ### Text Encryption Example
 
-![Text Encryption Demo](src/assets/enc1.gif)
+<p align="center">
+  <img src="src/assets/enc1.gif" alt="Text Encryption Demo" width="400px">
+</p>
+
 
 ---
 
@@ -30,7 +38,9 @@ It was developed for a huge programming competition in 2024 in my city, where it
 ✅ Multiple encryption algorithms supported: `md5`, `crc32`, `sha1`, `sha256`, `sha512`  
 ✅ My own custom method — **DUCK encryption** that rearranges letters and adds "duck" in between for fun 🦆  
 
-<img src="src/assets/enc2.gif" alt="Duck Encryption" width="300px">
+<p align="center">
+  <img src="src/assets/enc2.gif" alt=" Duck Encryption Example" width="550px">
+</p>
 
 ✅ User registration and login system  
 ✅ Session management across pages  
