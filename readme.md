@@ -20,13 +20,13 @@ It was developed for a huge programming competition in 2024 in my city, where it
 ### Password Generator in Action
 
 <p align="center">
-  <img src="src/assets/password.gif" alt="Password Generator Demo" width="400px">
+  <img src="src/assets/password.gif" alt="Password Generator Demo" width="550px">
 </p>
 
 ### Text Encryption Example
 
 <p align="center">
-  <img src="src/assets/enc1.gif" alt="Text Encryption Demo" width="400px">
+  <img src="src/assets/enc1.gif" alt="Text Encryption Demo" width="550px">
 </p>
 
 
@@ -65,36 +65,46 @@ It was developed for a huge programming competition in 2024 in my city, where it
 ```bash
 cd src
 python main.py
-
+```
 
 
 The web interface will open and provide access to password generation, encryption tools, and user management.
 
 For Windows users, a precompiled .exe file is available inside the dist folder.
 
-🗂️ Project Structure
-python
-Copy
-Edit
-src/
-├── assets/               # GIFs, screenshots for README
-├── css/                  # Stylesheets
-├── js/                   # JavaScript files
-├── logs/                 # Auto-created logs
-├── database/             # SQLite database files
-├── main.py               # Backend with eel
-├── main.html             # Main page
-├── encrypt.html          # Encryption page
-├── pass.html             # Password generator page
-dist/                     # Windows executable build
-build/                    # Build files for exe
-.gitignore
-README.md
-🎉 Special Thanks
-Thanks to ItSTEP for organizing the coding competition where this project originally started!
+## 🗂️ Project Structure
 
-PS: This project was designed with educational purposes in mind and showcases basic encryption principles combined with fun custom features like "Duck Encryption".
+📦 Project Root
+├── logs/ # Automatically created logs folder
+├── db/ # SQLite database files
+├── src/
+│ ├── main.py # Main backend script with eel
+│ ├── main_oop.py # Alternative OOP-style backend (optional)
+│ └── web/ # All front-end files
+│ ├── bootstrap/ # Bootstrap framework files
+│ ├── css/ # Custom stylesheets
+│ ├── icons/ # Icons for the UI
+│ ├── jquery/ # jQuery library
+│ ├── js/ # JavaScript files
+│ ├── encrypt.html# Text encryption tool
+│ ├── main.html # Main page
+│ ├── pass.html # Password generator
+│ └── pic1.png # Image for the main page
+├── .gitignore
+├── README.md
 
 yaml
 Copy
 Edit
+
+💡 **Notes:**  
+- `logs` and `db` folders are auto-created at runtime if missing  
+- All UI, pages and assets live inside `src/web/`  
+- `.gitignore` ensures temp files and builds don't clutter your repo  
+
+---
+
+🎉 Special Thanks
+Thanks to ItSTEP for organizing the coding competition where this project originally started!
+
+PS: This project was designed with educational purposes in mind and showcases basic encryption principles combined with fun custom features like "Duck Encryption".
