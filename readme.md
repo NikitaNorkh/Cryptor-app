@@ -2,7 +2,9 @@
 
 This project is a **multi-functional website application** built with Python `eel` for the backend and plain HTML/CSS/JS for the frontend.
 
-I did my best to deliver solid functionality, even though my UI design skills are still developing — so don't judge the visuals too hard 😅
+It was developed for a huge programming competition in 2024 in my city, where it successfully secured me a place in the finals. ( I was 16 years old at the moment )
+
+<img src="src/assets/sert.jpg" alt="Certificate" width="500px" align="center">
 
 ---
 
