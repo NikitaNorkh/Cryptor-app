@@ -1,8 +1,8 @@
-# 🔐 Secure Encryption Tool & Password Generator :: CRYPTOR
+# 🔐 Secure Encryption Tool & Password Generator
 
 This project is a **multi-functional website application** built with Python `eel` for the backend and plain HTML/CSS/JS for the frontend.
 
-It was developed for a huge programming competition in 2024 in my city, where it successfully secured me a place in the finals. ( I was 16 years old at the moment )
+🎖️ **It was created for one of the biggest programming competitions in my city (2024), where it took me straight to the finals at just 16 years old.**
 <p align="center">
   <img src="src/assets/sert.jpg" alt="Certificate" width="550px" align="center">
 </p>
