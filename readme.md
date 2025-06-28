@@ -1,4 +1,4 @@
-# 🔐 Secure Encryption Tool & Password Generator
+# 🔐 Secure Encryption Tool & Password Generator :: CRYPTOR
 
 This project is a **multi-functional website application** built with Python `eel` for the backend and plain HTML/CSS/JS for the frontend.
 
@@ -14,7 +14,7 @@ It was developed for a huge programming competition in 2024 in my city, where it
 ### Main Page
 
 <p align="center">
-  <img src="src/assets/main.png" alt="Main Page Screenshot" width="600px">
+  <img src="src/assets/main.png" alt="Main Page Screenshot" width="550px">
 </p>
 
 ### Password Generator in Action
@@ -75,21 +75,21 @@ For Windows users, a precompiled .exe file is available inside the dist folder.
 ## 🗂️ Project Structure
 ```
 📦 Project Root
-├── logs/ # Automatically created logs folder
-├── db/ # SQLite database files
+├── logs/                     # Automatically created logs folder
+├── db/                       # SQLite database files
 ├── src/
-│ ├── main.py # Main backend script with eel
-│ ├── main_oop.py # Alternative OOP-style backend (optional)
-│ └── web/ # All front-end files
-│ ├── bootstrap/ # Bootstrap framework files
-│ ├── css/ # Custom stylesheets
-│ ├── icons/ # Icons for the UI
-│ ├── jquery/ # jQuery library
-│ ├── js/ # JavaScript files
-│ ├── encrypt.html# Text encryption tool
-│ ├── main.html # Main page
-│ ├── pass.html # Password generator
-│ └── pic1.png # Image for the main page
+│ ├── main.py                 # Main backend script with eel
+│ ├── main_oop.py             # Classes used for users support
+│ └── web/             # All front-end files
+│     ├── bootstrap/           # Bootstrap framework files
+│     ├── css/                 # Custom stylesheets
+│     ├── icons/               # Icons for the UI
+│     ├── jquery/              # jQuery library
+│     ├── js/                  # JavaScript files
+│     ├── encrypt.html         # Text encryption tool
+│     ├── main.html            # Main page
+│     ├── pass.html            # Password generator
+│     └── pic1.png             # Image for the main page
 ├── .gitignore
 ├── README.md
 
